@@ -25,6 +25,7 @@ class Sign_up_screen : AppCompatActivity() {
         val edit_text_email: EditText = findViewById(R.id.email_input)
         val edit_text_password: EditText = findViewById(R.id.password_input)
         val signupbutton: Button = findViewById(R.id.signupbutton)
+        val loginbutton: Button = findViewById(R.id.loginbutton)
 
 
         signupbutton.setOnClickListener {
@@ -32,12 +33,32 @@ class Sign_up_screen : AppCompatActivity() {
             val email = edit_text_email.text.toString()
             val password = edit_text_password.text.toString()
 
-
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
 
                         Log.d("MovieApp", "createUserWithEmail:success")
+                        val user = auth.currentUser
+
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("MovieApp", "createUserWithEmail:failure", task.exception)
+                        Toast.makeText(baseContext, "Authentication failed.",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+        }
+
+        loginbutton.setOnClickListener {
+            val email = edit_text_email.text.toString()
+            val password = edit_text_password.text.toString()
+
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("MovieApp", "signinUserWithEmail:success")
                         val user = auth.currentUser
 
                     } else {
