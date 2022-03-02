@@ -1,13 +1,18 @@
 package com.as4me.movieapp.ui.home
 
 import android.os.Bundle
+import android.os.RecoverySystem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.as4me.movieapp.Adapters.CustomRecyclerAdapter
 import com.as4me.movieapp.R
 import com.as4me.movieapp.databinding.FragmentHomeBinding
 
@@ -31,8 +36,17 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        val recyclerView: RecyclerView = root.findViewById(R.id.rec_1_250)
+        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        recyclerView.adapter = CustomRecyclerAdapter(fillList())
 
         return root
+    }
+
+    private fun fillList() : List<String> {
+        val data = mutableListOf<String>()
+        (0..30).forEach{ i -> data.add("Film $i")}
+        return data
     }
 
     override fun onDestroyView() {

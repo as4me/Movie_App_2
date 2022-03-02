@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -15,12 +17,15 @@ class Sign_up_screen : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var analytics: FirebaseAnalytics
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_screen)
 
         auth = Firebase.auth
+        analytics = Firebase.analytics
 
         val edit_text_email: EditText = findViewById(R.id.email_input)
         val edit_text_password: EditText = findViewById(R.id.password_input)
