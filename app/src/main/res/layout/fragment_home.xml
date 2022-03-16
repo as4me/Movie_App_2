@@ -21,8 +21,25 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="#673AB7">
+                android:layout_height="250dp">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,7 +77,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="450dp">
 
                 <TextView
                     android:id="@+id/textViewnewfilms"
@@ -78,10 +95,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rec_2_new"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="350dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="32dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewnewfilms" />

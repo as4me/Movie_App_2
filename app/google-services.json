@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479291995871",
+    "project_id": "movie-app-fc550",
+    "storage_bucket": "movie-app-fc550.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479291995871:android:74f668144dedfd591c5b6a",
+        "android_client_info": {
+          "package_name": "com.as4me.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479291995871-grn25gcb5kfdq19hmrcmkasl7oijlpr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoq4Jw9MfcosfIGfETGFXIQqcec9ZnhUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479291995871-grn25gcb5kfdq19hmrcmkasl7oijlpr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
